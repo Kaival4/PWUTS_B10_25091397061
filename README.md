@@ -1,6 +1,6 @@
 # Dapur Admin
 
-UTS Pemrograman Web, D4 Manajemen Informatika 2025, Universitas Negeri Surabaya.
+UTS Pemrograman Web, D4 Manajemen Informatika, Universitas Negeri Surabaya.
 
 - Nama: Achmad Mohammad Rivaldi
 - NIM: 25091397061
