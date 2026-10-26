@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dapur Admin - Panel Pengelola Resep</title>
+<link rel="icon" href="images/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<!-- Halaman masuk admin (simulasi) -->
+<section id="login" hidden>
+  <div class="lwrap">
+    <div class="lhead">
+      <img src="images/logo.svg" alt="" width="56" height="56">
+      <h1>Dapur Admin</h1>
+      <p>Setujui resep yang masuk dan rapikan kategorinya sebelum tampil di katalog.</p>
+    </div>
+    <form id="formLogin" class="lcard" novalidate>
+      <h2>Masuk sebagai admin</h2>
+      <p id="loginErr" class="alert" role="alert" hidden></p>
+      <div class="fg"><label for="user">Username</label><input id="user" autocomplete="username"><span class="err" id="eUser"></span></div>
+      <div class="fg"><label for="pass">Kata sandi</label><input id="pass" type="password" autocomplete="current-password"><span class="err" id="ePass"></span></div>
+      <button class="btn block" type="submit">Masuk</button>
+      <p class="hint">Akun demo: <b>admin</b> / <b>admin123</b></p>
+    </form>
+  </div>
+</section>
+
+<!-- Layout utama setelah masuk (item 2.a) -->
+<div id="app" hidden>
+  <aside id="side">
+    <a href="#dashboard" class="brand"><img src="images/logo.svg" alt="" width="34" height="34">Dapur Admin</a>
+    <nav id="nav" aria-label="Menu admin">
+      <a href="#dashboard">Dashboard</a>
+      <a href="#moderasi">Moderasi Resep <span id="badge" class="badge" hidden></span></a>
+      <a href="#kategori">Kelola Kategori</a>
+    </nav>
+    <button id="logout" class="out" type="button">Keluar</button>
+  </aside>
+  <div id="scrim"></div>
+  <div class="col">
+    <header class="topbar">
+      <button id="burger" type="button" aria-label="Buka menu" aria-expanded="false">Menu</button>
+      <h1 id="judul">Dashboard</h1>
+      <span class="who">Admin: Achmad Mohammad Rivaldi</span>
+    </header>
+    <main>
+      <div id="dash" hidden>
+        <div class="stats">
+          <div class="stat"><span>Total resep</span><b id="sTotal">0</b></div>
+          <div class="stat wait"><span>Menunggu verifikasi</span><b id="sWait">0</b></div>
+          <div class="stat ok"><span>Disetujui</span><b id="sOk">0</b></div>
+          <div class="stat no"><span>Ditolak</span><b id="sNo">0</b></div>
+        </div>
+        <div class="panel">
+          <h2>Komposisi status</h2>
+          <div class="bar" aria-hidden="true"><i id="bWait"></i><i id="bOk"></i><i id="bNo"></i></div>
+          <p id="barTxt" class="muted"></p>
+        </div>
+        <div class="panel">
+          <div class="phead"><h2>Resep terbaru dari pengguna</h2><a class="btn sm" href="#moderasi">Buka moderasi</a></div>
+          <ul id="recent" class="recent"></ul>
+        </div>
+        <p><button id="reset" class="btn ghost sm" type="button">Kembalikan data demo</button></p>
+      </div>
+      <div id="konten" hidden></div>
+    </main>
+    <footer>© 2026 Dapur Admin. Kelompok B10, Achmad Mohammad Rivaldi (25091397061).</footer>
+  </div>
+</div>
+
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-label="Dialog">
+  <div class="box"><button class="x" type="button" aria-label="Tutup">×</button><div id="mbody"></div></div>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/store.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/moderasi.js"></script>
+<script src="js/kategori.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

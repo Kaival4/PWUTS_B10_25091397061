@@ -1,0 +1,19 @@
+<section class="split">
+  <form id="formKat" class="panel" novalidate>
+    <h2 id="kJudul">Tambah kategori</h2>
+    <input type="hidden" id="kId">
+    <div class="fg"><label for="kNama">Nama kategori</label><input id="kNama" maxlength="40" autocomplete="off"><span class="err" id="eNama"></span></div>
+    <div class="fg"><label for="kDesk">Deskripsi</label><textarea id="kDesk" rows="3"></textarea><span class="err" id="eDesk"></span></div>
+    <fieldset class="fg"><legend>Warna label</legend><div id="swatches" class="swatches"></div><span class="err" id="eWarna"></span></fieldset>
+    <div class="right"><button type="button" class="btn ghost" id="kBatal" hidden>Batal ubah</button> <button class="btn" type="submit" id="kSimpan">Simpan kategori</button></div>
+  </form>
+  <div class="panel">
+    <h2>Daftar kategori</h2>
+    <div class="tablewrap">
+      <table id="ktable">
+        <thead><tr><th>Kategori</th><th>Deskripsi</th><th>Resep</th><th>Aksi</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
